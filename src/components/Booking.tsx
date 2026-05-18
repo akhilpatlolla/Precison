@@ -49,24 +49,34 @@ export default function Booking() {
             className="lg:col-span-2 rounded-lg overflow-hidden border border-gold/20"
           >
             {/* TODO: swap src to new booking system when migrating off fieldd.co */}
-            <iframe
-              src="https://precisiondetailllc.fieldd.co/"
-              className="w-full"
-              style={{ height: 600, border: 'none', background: '#0a0a0a' }}
-              title="Book a Detail with Precision Detail"
-              loading="lazy"
-            />
-            {/* Fallback link if iframe is blocked by X-Frame-Options */}
-            <noscript>
-              <a
-                href="https://precisiondetailllc.fieldd.co/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gold text-black font-bold px-8 py-4 rounded tracking-widest uppercase hover:bg-yellow-400 transition-colors"
+            <div className="relative" style={{ height: 600 }}>
+              <iframe
+                src="https://precisiondetailllc.fieldd.co/"
+                className="w-full h-full"
+                style={{ border: 'none', background: '#0a0a0a' }}
+                title="Book a Detail with Precision Detail"
+                loading="lazy"
+                onError={() => {
+                  const el = document.getElementById('booking-fallback')
+                  if (el) el.style.display = 'flex'
+                }}
+              />
+              <div
+                id="booking-fallback"
+                style={{ display: 'none' }}
+                className="absolute inset-0 flex-col items-center justify-center gap-4 bg-[#0a0a0a]"
               >
-                Open Booking →
-              </a>
-            </noscript>
+                <p className="text-muted text-sm">Booking widget unavailable in this browser.</p>
+                <a
+                  href="https://precisiondetailllc.fieldd.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gold text-black font-bold px-8 py-4 rounded tracking-widest uppercase hover:bg-yellow-400 transition-colors"
+                >
+                  Open Booking →
+                </a>
+              </div>
+            </div>
           </motion.div>
 
           {/* Contact sidebar — 1/3 width */}
