@@ -6,7 +6,7 @@ import { TESTIMONIALS } from '@/lib/tokens'
 
 const STATS = {
   rating: 5.0,
-  total: 47,
+  total: 30,
   satisfaction: 100,
 }
 
@@ -109,8 +109,8 @@ export default function Testimonials() {
 
           {/* Right: breakdown bars */}
           <div className="flex flex-col justify-center gap-4">
-            <RatingBar label="5 stars" pct={94} />
-            <RatingBar label="4 stars" pct={6} />
+            <RatingBar label="5 stars" pct={100} />
+            <RatingBar label="4 stars" pct={0} />
             <RatingBar label="3 stars" pct={0} />
             <RatingBar label="2 stars" pct={0} />
             <RatingBar label="1 star"  pct={0} />
