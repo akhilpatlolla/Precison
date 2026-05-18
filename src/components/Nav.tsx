@@ -21,9 +21,12 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <span className="text-gold font-black tracking-widest text-sm uppercase">
-          Precision Detail
-        </span>
+        <img
+          src="/Precison/images/logo.webp"
+          alt="Precision Detail"
+          className="h-10 w-auto"
+          style={{ filter: 'invert(1)' }}
+        />
         <div className="hidden md:flex items-center gap-8">
           <button
             onClick={() => scrollToSection('services')}
