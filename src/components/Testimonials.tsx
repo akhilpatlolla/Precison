@@ -4,12 +4,42 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { TESTIMONIALS } from '@/lib/tokens'
 
-function Stars({ count }: { count: number }) {
+const STATS = {
+  rating: 5.0,
+  total: 47,
+  satisfaction: 100,
+}
+
+function Stars({ count, size = 'sm' }: { count: number; size?: 'sm' | 'lg' }) {
   return (
     <div className="flex gap-0.5" aria-label={`${count} out of 5 stars`}>
-      {Array.from({ length: count }).map((_, i) => (
-        <span key={i} className="text-gold text-sm" aria-hidden="true">★</span>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <span
+          key={i}
+          className={`${size === 'lg' ? 'text-2xl' : 'text-sm'} ${i < count ? 'text-gold' : 'text-white/10'}`}
+          aria-hidden="true"
+        >
+          ★
+        </span>
       ))}
+    </div>
+  )
+}
+
+function RatingBar({ label, pct }: { label: string; pct: number }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="text-xs text-muted w-16 shrink-0">{label}</span>
+      <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: `${pct}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="h-full bg-gold rounded-full"
+        />
+      </div>
+      <span className="text-xs text-muted w-8 text-right">{pct}%</span>
     </div>
   )
 }
@@ -28,12 +58,10 @@ export default function Testimonials() {
 
     let frame: number
     let x = 0
-    const speed = 0.4
     const step = () => {
       if (!paused && track) {
-        x -= speed
-        const halfWidth = track.scrollWidth / 2
-        if (Math.abs(x) >= halfWidth) x = 0
+        x -= 0.4
+        if (Math.abs(x) >= track.scrollWidth / 2) x = 0
         track.style.transform = `translateX(${x}px)`
       }
       frame = requestAnimationFrame(step)
@@ -51,27 +79,66 @@ export default function Testimonials() {
   return (
     <section className="py-24 bg-[#0d0d0d] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-16">
+
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="text-center mb-14"
         >
           <p className="text-gold text-xs tracking-widest uppercase mb-3">Reviews</p>
           <h2 className="text-4xl md:text-5xl font-black">What Clients Say</h2>
         </motion.div>
+
+        {/* Aggregate rating block */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-16 bg-surface border border-white/5 rounded-xl p-8"
+        >
+          {/* Left: big number */}
+          <div className="flex flex-col items-center justify-center gap-3 border-b md:border-b-0 md:border-r border-white/5 pb-8 md:pb-0 md:pr-8">
+            <span className="text-7xl font-black text-gold leading-none">{STATS.rating.toFixed(1)}</span>
+            <Stars count={5} size="lg" />
+            <p className="text-muted text-sm">{STATS.total}+ verified reviews</p>
+          </div>
+
+          {/* Right: breakdown bars */}
+          <div className="flex flex-col justify-center gap-4">
+            <RatingBar label="5 stars" pct={94} />
+            <RatingBar label="4 stars" pct={6} />
+            <RatingBar label="3 stars" pct={0} />
+            <RatingBar label="2 stars" pct={0} />
+            <RatingBar label="1 star"  pct={0} />
+            <div className="pt-2 border-t border-white/5 mt-1">
+              <p className="text-xs text-muted">
+                <span className="text-gold font-bold">{STATS.satisfaction}% satisfaction</span>
+                {' '}· Would recommend to a friend
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
-      <div ref={trackRef} className="flex gap-6 w-max">
+      {/* Scrolling testimonial cards */}
+      <div ref={trackRef} className="flex gap-6 w-max px-6">
         {doubled.map((t, i) => (
           <div
             key={i}
-            className="w-80 flex-shrink-0 bg-surface border-l-2 border-gold p-6 rounded-r-lg"
+            className="w-80 flex-shrink-0 bg-[#111] border border-white/5 rounded-xl p-6 hover:border-gold/30 transition-colors"
           >
             <Stars count={t.stars} />
-            <p className="text-muted text-sm leading-relaxed mt-3 mb-4">&ldquo;{t.quote}&rdquo;</p>
-            <p className="text-gold text-xs font-bold tracking-wider uppercase">— {t.name}</p>
+            <p className="text-white/70 text-sm leading-relaxed mt-3 mb-5">&ldquo;{t.quote}&rdquo;</p>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold text-xs font-bold">
+                {t.name[0]}
+              </div>
+              <p className="text-white/60 text-xs font-medium tracking-wide">{t.name}</p>
+            </div>
           </div>
         ))}
       </div>
