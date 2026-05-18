@@ -24,7 +24,7 @@ export default function FAQ() {
         <div className="space-y-3">
           {FAQ_ITEMS.map((item, i) => (
             <motion.div
-              key={i}
+              key={item.q}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
