@@ -4,6 +4,7 @@ import Services from '@/components/Services'
 import OurWork from '@/components/OurWork'
 import BeforeAfter from '@/components/BeforeAfter'
 import Testimonials from '@/components/Testimonials'
+import About from '@/components/About'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <OurWork />
       <BeforeAfter />
       <Testimonials />
+      <About />
     </main>
   )
 }
