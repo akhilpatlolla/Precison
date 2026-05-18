@@ -6,7 +6,7 @@ const PHOTOS = [
   { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', caption: 'Interior Detail' },
   { src: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=600&q=80', caption: 'Exterior Polish' },
   { src: 'https://images.unsplash.com/photo-1600705722908-bca4a8c1ad67?w=600&q=80', caption: 'Wheel Restoration' },
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', caption: 'Paint Correction' },
+  { src: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=600&q=80', caption: 'Paint Correction' },
   { src: 'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=600&q=80', caption: 'Leather Conditioning' },
   { src: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&q=80', caption: 'Full Detail' },
 ]

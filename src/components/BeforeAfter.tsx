@@ -35,13 +35,8 @@ function Slider({ before, after, label }: SliderProps) {
       <img src={after} alt="After detail" className="absolute inset-0 w-full h-full object-cover" />
 
       {/* Before (clipped layer) */}
-      <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-        <img
-          src={before}
-          alt="Before detail"
-          className="absolute inset-0 h-full object-cover"
-          style={{ width: `${10000 / Math.max(pos, 1)}%`, maxWidth: 'none' }}
-        />
+      <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
+        <img src={before} alt="Before detail" className="absolute inset-0 w-full h-full object-cover" />
       </div>
 
       {/* Divider */}
