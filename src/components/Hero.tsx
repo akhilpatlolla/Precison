@@ -77,8 +77,9 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
+        aria-hidden="true"
         animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
+        transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40 text-2xl"
       >
         ↓
