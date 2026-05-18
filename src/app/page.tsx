@@ -5,6 +5,7 @@ import OurWork from '@/components/OurWork'
 import BeforeAfter from '@/components/BeforeAfter'
 import Testimonials from '@/components/Testimonials'
 import About from '@/components/About'
+import FAQ from '@/components/FAQ'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <BeforeAfter />
       <Testimonials />
       <About />
+      <FAQ />
     </main>
   )
 }
