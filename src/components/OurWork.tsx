@@ -3,12 +3,21 @@
 import { motion } from 'framer-motion'
 
 const PHOTOS = [
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', caption: 'Interior Detail' },
-  { src: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=600&q=80', caption: 'Exterior Polish' },
-  { src: 'https://images.unsplash.com/photo-1600705722908-bca4a8c1ad67?w=600&q=80', caption: 'Wheel Restoration' },
-  { src: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=600&q=80', caption: 'Paint Correction' },
-  { src: 'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=600&q=80', caption: 'Leather Conditioning' },
-  { src: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&q=80', caption: 'Full Detail' },
+  { src: '/Precison/images/work/IMG_1074.jpeg', caption: 'McLaren 720S' },
+  { src: '/Precison/images/work/IMG_1760.jpeg', caption: 'McLaren Cockpit Detail' },
+  { src: '/Precison/images/work/IMG_2153.jpeg', caption: 'Mercedes S-Class' },
+  { src: '/Precison/images/work/IMG_3045.jpeg', caption: 'Wheel Restoration' },
+  { src: '/Precison/images/work/IMG_3439.jpeg', caption: 'Lexus RX Detail' },
+  { src: '/Precison/images/work/IMG_3448.jpeg', caption: 'Interior Conditioning' },
+  { src: '/Precison/images/work/IMG_3630.jpeg', caption: 'Interior Deep Clean' },
+  { src: '/Precison/images/work/IMG_3631.jpeg', caption: 'Cabin Detailing' },
+  { src: '/Precison/images/work/IMG_3663.jpeg', caption: 'Boat Detailing' },
+  { src: '/Precison/images/work/IMG_3664.jpeg', caption: 'Foam Wash' },
+  { src: '/Precison/images/work/IMG_3665.jpeg', caption: 'Lexus RC F' },
+  { src: '/Precison/images/work/IMG_6555.jpeg', caption: 'Cadillac Escalade' },
+  { src: '/Precison/images/work/IMG_7073.jpeg', caption: 'BMW 5-Series' },
+  { src: '/Precison/images/work/IMG_7443.jpeg', caption: 'Mercedes AMG GT-R' },
+  { src: '/Precison/images/work/IMG_7534.jpeg', caption: 'Corvette Detail' },
 ]
 
 export default function OurWork() {
@@ -49,7 +58,6 @@ export default function OurWork() {
             </motion.div>
           ))}
         </div>
-        {/* Replace PHOTOS array src values with your real photos in /public/images/work/ */}
       </div>
     </section>
   )

@@ -58,14 +58,9 @@ function Slider({ before, after, label }: SliderProps) {
 
 const PAIRS = [
   {
-    before: 'https://images.unsplash.com/photo-1549194388-b6fc5a2de40e?w=800&q=80',
-    after: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    label: 'Interior Detail',
-  },
-  {
-    before: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&q=80',
-    after: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800&q=80',
-    label: 'Exterior Polish',
+    before: '/Precison/images/before/IMG_3416.jpeg',
+    after: '/Precison/images/after/IMG_3417.jpeg',
+    label: 'Interior Deep Clean',
   },
 ]
 
@@ -85,7 +80,7 @@ export default function BeforeAfter() {
           <p className="text-muted mt-3 text-sm">Drag the gold handle to reveal</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-3xl mx-auto">
           {PAIRS.map((pair, i) => (
             <motion.div
               key={i}
@@ -98,7 +93,6 @@ export default function BeforeAfter() {
             </motion.div>
           ))}
         </div>
-        {/* Replace PAIRS src values with your real photos in /public/images/before/ and /public/images/after/ */}
       </div>
     </section>
   )
