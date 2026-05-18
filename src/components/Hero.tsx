@@ -3,8 +3,10 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { scrollToSection } from '@/lib/scrollTo'
+import { useBooking } from '@/lib/bookingContext'
 
 export default function Hero() {
+  const { openModal } = useBooking()
   const ref = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
@@ -70,7 +72,7 @@ export default function Hero() {
           className="flex gap-4 flex-wrap"
         >
           <button
-            onClick={() => scrollToSection('booking')}
+            onClick={openModal}
             className="bg-gold text-black font-bold px-8 py-3 rounded tracking-widest text-sm uppercase hover:bg-yellow-400 transition-colors gold-glow"
           >
             Book Now

@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { PACKAGES } from '@/lib/tokens'
-import { scrollToSection } from '@/lib/scrollTo'
+import { useBooking } from '@/lib/bookingContext'
 
 const CHECK = '✓'
 
 export default function Services() {
+  const { openModal } = useBooking()
   return (
     <section id="services" className="py-24 px-6 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto">
@@ -51,7 +52,7 @@ export default function Services() {
                 ))}
               </ul>
               <button
-                onClick={() => scrollToSection('booking')}
+                onClick={openModal}
                 className={`w-full py-3 rounded text-sm font-bold tracking-widest uppercase transition-colors ${
                   pkg.highlight
                     ? 'bg-gold text-black hover:bg-yellow-400'

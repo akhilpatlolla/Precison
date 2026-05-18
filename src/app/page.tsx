@@ -1,3 +1,5 @@
+import { BookingProvider } from '@/lib/bookingContext'
+import BookingModal from '@/components/BookingModal'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
@@ -11,17 +13,20 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main>
-      <Nav />
-      <Hero />
-      <Services />
-      <OurWork />
-      <BeforeAfter />
-      <Testimonials />
-      <About />
-      <FAQ />
-      <Booking />
-      <Footer />
-    </main>
+    <BookingProvider>
+      <BookingModal />
+      <main>
+        <Nav />
+        <Hero />
+        <Services />
+        <OurWork />
+        <BeforeAfter />
+        <Testimonials />
+        <About />
+        <FAQ />
+        <Booking />
+        <Footer />
+      </main>
+    </BookingProvider>
   )
 }

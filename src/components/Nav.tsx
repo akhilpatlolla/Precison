@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { scrollToSection } from '@/lib/scrollTo'
+import { useBooking } from '@/lib/bookingContext'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const { openModal } = useBooking()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
@@ -36,14 +38,14 @@ export default function Nav() {
             Gallery
           </button>
           <button
-            onClick={() => scrollToSection('booking')}
+            onClick={openModal}
             className="bg-gold text-black text-xs font-bold px-5 py-2 rounded tracking-widest uppercase hover:bg-yellow-400 transition-colors"
           >
             Book Now
           </button>
         </div>
         <button
-          onClick={() => scrollToSection('booking')}
+          onClick={openModal}
           className="md:hidden bg-gold text-black text-xs font-bold px-4 py-2 rounded tracking-widest uppercase"
         >
           Book
