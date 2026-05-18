@@ -24,8 +24,8 @@ export default function Nav() {
         <img
           src="/Precison/images/logo.webp"
           alt="Precision Detail"
-          className="h-10 w-auto"
-          style={{ filter: 'invert(1)' }}
+          className="h-14 w-auto"
+          style={{ filter: 'invert(1)', mixBlendMode: 'screen' }}
         />
         <div className="hidden md:flex items-center gap-8">
           <button
