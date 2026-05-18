@@ -6,6 +6,7 @@ import BeforeAfter from '@/components/BeforeAfter'
 import Testimonials from '@/components/Testimonials'
 import About from '@/components/About'
 import FAQ from '@/components/FAQ'
+import Booking from '@/components/Booking'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Testimonials />
       <About />
       <FAQ />
+      <Booking />
     </main>
   )
 }
