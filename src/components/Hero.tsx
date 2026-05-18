@@ -13,13 +13,21 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0 z-0">
+        {/* Thumbnail fallback — visible when video hasn't loaded yet */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://video.squarespace-cdn.com/content/v1/67e9dca7f6055d56f94552ac/06e0dfed-8804-41b9-9548-0c1af1f3887c/thumbnail')`,
+          }}
+        />
+        {/* TODO: drop your video file into public/video/hero.mp4 to enable the video background */}
         <video
           autoPlay
           muted
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          poster="/Precison/images/hero-poster.jpg"
+          poster="https://video.squarespace-cdn.com/content/v1/67e9dca7f6055d56f94552ac/06e0dfed-8804-41b9-9548-0c1af1f3887c/thumbnail"
         >
           <source src="/Precison/video/hero.mp4" type="video/mp4" />
         </video>
