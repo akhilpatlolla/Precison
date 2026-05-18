@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0a0a;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a84c44;
+  border-radius: 3px;
+}
+
+@layer utilities {
+  .gold-glow {
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+  }
+}
