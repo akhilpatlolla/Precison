@@ -8,6 +8,7 @@ import BeforeAfter from '@/components/BeforeAfter'
 import Testimonials from '@/components/Testimonials'
 import About from '@/components/About'
 import FAQ from '@/components/FAQ'
+import ContactForm from '@/components/ContactForm'
 import Booking from '@/components/Booking'
 import Footer from '@/components/Footer'
 
@@ -24,6 +25,7 @@ export default function Home() {
         <Testimonials />
         <About />
         <FAQ />
+        <ContactForm />
         <Booking />
         <Footer />
       </main>
