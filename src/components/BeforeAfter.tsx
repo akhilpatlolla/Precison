@@ -62,6 +62,21 @@ const PAIRS = [
     after: '/Precison/images/after/IMG_3417.jpeg',
     label: 'Interior Deep Clean',
   },
+  {
+    before: '/Precison/images/before/627120664_122168259206880261_2447563834866533043_n.jpg',
+    after: '/Precison/images/after/628044005_122168259344880261_1140634947337978528_n.jpg',
+    label: 'Toyota Tacoma TRD Detail',
+  },
+  {
+    before: '/Precison/images/before/628047737_122168259332880261_7718594003553120929_n.jpg',
+    after: '/Precison/images/after/627129904_122168259278880261_2628416492131156835_n.jpg',
+    label: 'Exterior Paint & Panel',
+  },
+  {
+    before: '/Precison/images/before/625471098_122168259218880261_1653850376281587277_n.jpg',
+    after: '/Precison/images/after/630226845_122168259272880261_7566388241574249251_n.jpg',
+    label: 'Wheel & Tire Restoration',
+  },
 ]
 
 export default function BeforeAfter() {
@@ -80,7 +95,7 @@ export default function BeforeAfter() {
           <p className="text-muted mt-3 text-sm">Drag the gold handle to reveal</p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {PAIRS.map((pair, i) => (
             <motion.div
               key={i}
