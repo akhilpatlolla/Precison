@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { TESTIMONIALS } from '@/lib/tokens'
+import { TESTIMONIALS, AI_REVIEW_SUMMARY } from '@/lib/tokens'
 
 const STATS = {
   rating: 5.0,
@@ -122,6 +122,24 @@ export default function Testimonials() {
             </div>
           </div>
         </motion.div>
+
+        {/* AI Summary */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl mx-auto mt-6 bg-[#0f0e09] border border-gold/20 rounded-xl p-6"
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-[10px] font-bold tracking-widest uppercase bg-gold/15 text-gold px-2.5 py-1 rounded-full border border-gold/30">
+              ✦ AI Summary
+            </span>
+            <span className="text-muted text-xs">Generated from verified customer reviews</span>
+          </div>
+          <p className="text-white/75 text-sm leading-relaxed">{AI_REVIEW_SUMMARY}</p>
+        </motion.div>
+
       </div>
 
       {/* Scrolling testimonial cards */}

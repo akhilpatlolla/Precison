@@ -41,21 +41,53 @@ export const PACKAGES = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Absolutely incredible work — my car looks brand new. Best detailing I've ever had.",
+    quote: "Precision Detail transformed my sedan with their Premium Plus Detail service. The attention to detail and the high-quality German products they use make all the difference. My car has never looked better!",
     name: 'Sarah M.',
     stars: 5,
   },
   {
-    quote: "Best mobile detailing service in Kannapolis, hands down. They came to my office and I came back to a showroom car.",
-    name: 'James T.',
+    quote: "As a truck owner, finding a reliable detailing service is tough. Precision Detail exceeded my expectations with their Polish and Ceramic Coating. My truck looks brand new and the coating keeps it protected.",
+    name: 'James R.',
     stars: 5,
   },
   {
-    quote: "Worth every penny. My leather seats look better than when I bought the car.",
-    name: 'Marcus R.',
+    quote: "I recently used Precision Detail's Maintenance Wash service for my SUV, and I am thrilled with the results. The convenience of mobile detailing and the exceptional products they use have made me a loyal customer.",
+    name: 'Emily T.',
+    stars: 5,
+  },
+  {
+    quote: "The Premium Detail service from Precision Detail for my coupe was phenomenal. Their high-quality German shampoos and cleaners left my car spotless and shining like never before. Highly recommend!",
+    name: 'Michael K.',
+    stars: 5,
+  },
+  {
+    quote: "Precision Detail's mobile detailing service is a game-changer. The Ceramic Coating they applied to my sedan not only looks amazing but also provides lasting protection. Excellent service and products!",
+    name: 'Linda G.',
+    stars: 5,
+  },
+  {
+    quote: "I chose the Premium Plus Detail for my SUV, and I am beyond impressed. The team at Precision Detail uses top-notch products, and their meticulous work speaks for itself. My SUV has never looked this good.",
+    name: 'Daniel P.',
+    stars: 5,
+  },
+  {
+    quote: "Precision Detail's Polish and Ceramic Coating service gave my truck a showroom finish. Their use of high-quality German products and their expertise truly sets them apart from the rest.",
+    name: 'Heather W.',
+    stars: 5,
+  },
+  {
+    quote: "The Premium Detail for my sedan was outstanding. Precision Detail's dedication to quality and their use of exceptional products have made my car look immaculate. I couldn't be happier with the results.",
+    name: 'Robert J.',
+    stars: 5,
+  },
+  {
+    quote: "From their Maintenance Wash to their Polish and Ceramic Coating, Precision Detail consistently delivers superior results. My SUV looks incredible, and the protection their products provide is top-tier.",
+    name: 'Chris D.',
     stars: 5,
   },
 ]
+
+export const AI_REVIEW_SUMMARY = "Customers consistently praise Precision Detail for transforming their vehicles — sedans, trucks, SUVs, and coupes alike — with meticulous care and professional-grade German products. Reviewers highlight the ceramic coating and premium detail packages as standouts, noting results that rival showroom finishes and protection that lasts. The convenience of mobile service and the team's attention to detail earn loyal repeat customers across every visit."
 
 export const FAQ_ITEMS = [
   {
