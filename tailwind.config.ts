@@ -13,7 +13,11 @@ const config: Config = {
         muted: '#888888',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+      },
+      letterSpacing: {
+        'display': '-0.02em',
       },
     },
   },

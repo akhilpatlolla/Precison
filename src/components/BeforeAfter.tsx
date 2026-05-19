@@ -90,8 +90,8 @@ export default function BeforeAfter() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-gold text-xs tracking-widest uppercase mb-3">Transformations</p>
-          <h2 className="text-4xl md:text-5xl font-black">Before & After</h2>
+          <p className="label-gold mb-3">Transformations</p>
+          <h2 className="font-display text-5xl md:text-6xl font-light">Before &amp; After</h2>
           <p className="text-muted mt-3 text-sm">Drag the gold handle to reveal</p>
         </motion.div>
 

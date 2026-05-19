@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-[#080808] border-t border-white/5 py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div>
-          <p className="text-gold font-black tracking-widest text-sm uppercase">Precision Detail</p>
+          <p className="font-display text-gold text-lg font-light tracking-[0.15em] uppercase">Precision Detail</p>
           <p className="text-muted text-xs mt-1">Premium Mobile Auto Detailing · Kannapolis, NC</p>
         </div>
         <div className="flex gap-6 text-muted text-sm">

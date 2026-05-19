@@ -47,8 +47,8 @@ export default function ContactForm() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-gold text-xs tracking-widest uppercase mb-3">Get in Touch</p>
-          <h2 className="text-4xl md:text-5xl font-black">Request a Quote</h2>
+          <p className="label-gold mb-3">Get in Touch</p>
+          <h2 className="font-display text-5xl md:text-6xl font-light">Request a Quote</h2>
           <p className="text-muted mt-3 text-sm">We&apos;ll get back to you within 24 hours.</p>
         </motion.div>
 

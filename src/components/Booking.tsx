@@ -34,8 +34,8 @@ export default function Booking() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-gold text-xs tracking-widest uppercase mb-3">Ready to Book?</p>
-          <h2 className="text-4xl md:text-5xl font-black">Book Your Detail</h2>
+          <p className="label-gold mb-3">Ready to Book?</p>
+          <h2 className="font-display text-5xl md:text-6xl font-light">Book Your Detail</h2>
           <p className="text-muted mt-3">Select your package and preferred date below</p>
         </motion.div>
 

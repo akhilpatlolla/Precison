@@ -33,8 +33,8 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          <p className="text-gold text-xs tracking-widest uppercase mb-4">Our Story</p>
-          <h2 className="text-4xl md:text-5xl font-black mb-6">About Us</h2>
+          <p className="label-gold mb-4">Our Story</p>
+          <h2 className="font-display text-5xl md:text-6xl font-light mb-6">About Us</h2>
           <p className="text-muted leading-relaxed mb-4">
             Precision Detail was built on one simple belief: your car deserves the same level of care you give everything else you love. We bring professional-grade detailing directly to your door in Kannapolis and the surrounding area.
           </p>

@@ -42,14 +42,14 @@ export default function Nav() {
           </button>
           <button
             onClick={openModal}
-            className="bg-gold text-black text-xs font-bold px-5 py-2 rounded tracking-widest uppercase hover:bg-yellow-400 transition-colors"
+            className="bg-gold text-black text-xs font-semibold px-5 py-2 rounded-sm tracking-[0.15em] uppercase hover:bg-yellow-400 transition-colors gold-glow"
           >
             Book Now
           </button>
         </div>
         <button
           onClick={openModal}
-          className="md:hidden bg-gold text-black text-xs font-bold px-4 py-2 rounded tracking-widest uppercase"
+          className="md:hidden bg-gold text-black text-xs font-semibold px-4 py-2 rounded-sm tracking-[0.15em] uppercase"
         >
           Book
         </button>

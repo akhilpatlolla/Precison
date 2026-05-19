@@ -18,8 +18,8 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-gold text-xs tracking-widest uppercase mb-3">What We Offer</p>
-          <h2 className="text-4xl md:text-5xl font-black">Our Packages</h2>
+          <p className="label-gold mb-3">What We Offer</p>
+          <h2 className="font-display text-5xl md:text-6xl font-light">Our Packages</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -41,8 +41,8 @@ export default function Services() {
                   Most Popular
                 </span>
               )}
-              <p className="text-gold text-xs tracking-widest uppercase mb-2">{pkg.tagline}</p>
-              <h3 className="text-2xl font-black mb-6">{pkg.name}</h3>
+              <p className="label-gold mb-2">{pkg.tagline}</p>
+              <h3 className="font-display text-2xl font-light mb-6">{pkg.name}</h3>
               <ul className="flex-1 space-y-3 mb-8">
                 {pkg.features.map((f) => (
                   <li key={f} className="flex gap-3 text-sm text-muted">
@@ -53,9 +53,9 @@ export default function Services() {
               </ul>
               <button
                 onClick={openModal}
-                className={`w-full py-3 rounded text-sm font-bold tracking-widest uppercase transition-colors ${
+                className={`w-full py-3 rounded-sm text-xs font-semibold tracking-[0.15em] uppercase transition-colors ${
                   pkg.highlight
-                    ? 'bg-gold text-black hover:bg-yellow-400'
+                    ? 'bg-gold text-black hover:bg-yellow-400 gold-glow'
                     : 'border border-gold/40 text-gold hover:bg-gold/10'
                 }`}
               >

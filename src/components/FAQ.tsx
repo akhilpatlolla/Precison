@@ -17,8 +17,8 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-gold text-xs tracking-widest uppercase mb-3">Common Questions</p>
-          <h2 className="text-4xl md:text-5xl font-black">FAQ</h2>
+          <p className="label-gold mb-3">Common Questions</p>
+          <h2 className="font-display text-5xl md:text-6xl font-light">FAQ</h2>
         </motion.div>
 
         <div className="space-y-3">

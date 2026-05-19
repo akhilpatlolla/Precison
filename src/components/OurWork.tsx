@@ -125,8 +125,8 @@ export default function OurWork() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-gold text-xs tracking-widest uppercase mb-3">Portfolio</p>
-          <h2 className="text-4xl md:text-5xl font-black">Our Work</h2>
+          <p className="label-gold mb-3">Portfolio</p>
+          <h2 className="font-display text-5xl md:text-6xl font-light">Our Work</h2>
           <p className="text-muted mt-3 text-sm">Click any photo to enlarge</p>
         </motion.div>
 

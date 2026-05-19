@@ -40,28 +40,30 @@ export default function Hero() {
         style={{ opacity }}
         className="relative z-10 max-w-6xl mx-auto px-6 pt-16"
       >
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-gold text-xs tracking-widest uppercase mb-4"
+          className="flex items-center gap-3 mb-6"
         >
-          Premium Mobile Detailing &nbsp;·&nbsp; Kannapolis, NC
-        </motion.p>
+          <div className="h-px w-8 bg-gold/60" />
+          <p className="label-gold">Premium Mobile Detailing &nbsp;·&nbsp; Kannapolis, NC</p>
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-5xl md:text-7xl font-black leading-tight mb-6 max-w-2xl"
+          className="font-display text-6xl md:text-8xl font-light leading-[0.95] mb-8 max-w-2xl"
         >
-          Your Car Deserves{' '}
-          <span className="text-gold">the Best</span>
+          Your Car<br />
+          Deserves{' '}
+          <em className="text-gold not-italic">the Best</em>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-muted text-lg mb-10 max-w-md"
+          className="text-white/50 text-base font-sans tracking-wide mb-10 max-w-sm"
         >
           We come to you. Showroom shine, every time.
         </motion.p>
@@ -73,13 +75,13 @@ export default function Hero() {
         >
           <button
             onClick={openModal}
-            className="bg-gold text-black font-bold px-8 py-3 rounded tracking-widest text-sm uppercase hover:bg-yellow-400 transition-colors gold-glow"
+            className="bg-gold text-black font-sans font-semibold px-8 py-3.5 rounded-sm tracking-[0.15em] text-xs uppercase hover:bg-yellow-400 transition-all duration-200 gold-glow hover:gold-glow"
           >
             Book Now
           </button>
           <button
             onClick={() => scrollToSection('services')}
-            className="border border-white/30 text-white/80 font-medium px-8 py-3 rounded text-sm hover:border-gold hover:text-gold transition-colors"
+            className="border border-white/20 text-white/60 font-sans px-8 py-3.5 rounded-sm text-xs tracking-[0.15em] uppercase hover:border-gold/60 hover:text-gold/80 transition-all duration-200"
           >
             View Services
           </button>
