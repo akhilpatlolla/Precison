@@ -9,7 +9,7 @@ const CHECK = '✓'
 export default function Services() {
   const { openModal } = useBooking()
   return (
-    <section id="services" className="py-24 px-6 bg-[#0a0a0a]">
+    <section id="services" className="relative py-24 px-6 bg-[#0a0a0a] section-glow">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

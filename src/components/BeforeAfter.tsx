@@ -81,7 +81,7 @@ const PAIRS = [
 
 export default function BeforeAfter() {
   return (
-    <section className="py-24 px-6 bg-[#0a0a0a]">
+    <section id="before-after" className="py-24 px-6 bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

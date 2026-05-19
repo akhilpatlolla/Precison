@@ -8,7 +8,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="py-24 px-6 bg-[#0d0d0d]">
+    <section id="faq" className="py-24 px-6 bg-[#0d0d0d]">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

@@ -10,7 +10,7 @@ const BADGES = [
 
 export default function About() {
   return (
-    <section className="py-24 px-6 bg-[#0a0a0a]">
+    <section id="about" className="relative py-24 px-6 bg-[#0a0a0a] section-glow-left">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}

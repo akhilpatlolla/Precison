@@ -77,7 +77,7 @@ export default function Testimonials() {
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS]
 
   return (
-    <section className="py-24 bg-[#0d0d0d] overflow-hidden">
+    <section id="reviews" className="py-24 bg-[#0d0d0d] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-16">
 
         {/* Heading */}
@@ -102,7 +102,7 @@ export default function Testimonials() {
         >
           {/* Left: big number */}
           <div className="flex flex-col items-center justify-center gap-3 border-b md:border-b-0 md:border-r border-white/5 pb-8 md:pb-0 md:pr-8">
-            <span className="text-7xl font-black text-gold leading-none">{STATS.rating.toFixed(1)}</span>
+            <span className="font-display text-8xl font-light text-gold leading-none">{STATS.rating.toFixed(1)}</span>
             <Stars count={5} size="lg" />
             <p className="text-muted text-sm">{STATS.total}+ verified reviews</p>
           </div>
