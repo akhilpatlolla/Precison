@@ -187,8 +187,8 @@ body {
 
   /* Ghost outline display text (editorial marquee) */
   .text-outline {
-    -webkit-text-stroke: 1px rgb(var(--ink-rgb) / 0.18);
-    color: transparent;
+    -webkit-text-stroke: 1.5px rgb(var(--ink-rgb) / 0.55);
+    color: rgb(var(--ink-rgb) / 0.07);
   }
   .text-outline-gold {
     -webkit-text-stroke: 1px rgb(var(--brand-rgb) / 0.35);
