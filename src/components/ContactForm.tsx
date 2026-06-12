@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 const FIELD_CLASS =
-  'w-full bg-[#0a0a0a] border border-white/10 rounded px-4 py-3 text-white text-sm placeholder:text-muted focus:outline-none focus:border-gold/60 transition-colors'
+  'w-full bg-base border border-ink/15 rounded px-4 py-3 text-ink text-sm placeholder:text-muted focus:outline-none focus:border-gold/60 transition-colors'
 
 const LABEL_CLASS = 'block text-xs text-muted tracking-wider uppercase mb-2'
 
@@ -38,7 +38,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="relative py-24 px-6 bg-[#0a0a0a] section-glow">
+    <section id="contact" className="relative py-24 px-6 bg-base section-glow">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -47,7 +47,6 @@ export default function ContactForm() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="label-gold mb-3">Get in Touch</p>
           <h2 className="font-display text-5xl md:text-6xl font-light">Request a Quote</h2>
           <p className="text-muted mt-3 text-sm">We&apos;ll get back to you within 24 hours.</p>
         </motion.div>
@@ -58,7 +57,7 @@ export default function ContactForm() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
           onSubmit={handleSubmit}
-          className="space-y-5 bg-surface border border-white/5 rounded-xl p-8"
+          className="space-y-5 bg-surface border border-ink/10 rounded-xl p-8 shadow-[0_24px_48px_-24px_rgb(0_0_0/0.15)]"
         >
           {/* Name */}
           <div>
@@ -122,7 +121,7 @@ export default function ContactForm() {
             <textarea
               name="concerns"
               rows={4}
-              placeholder="Describe what you'd like addressed — pet hair, paint swirls, leather conditioning, etc."
+              placeholder="Describe what you'd like addressed: pet hair, paint swirls, leather conditioning, etc."
               className={`${FIELD_CLASS} resize-none`}
             />
           </div>
@@ -131,7 +130,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full bg-gold text-black font-bold py-3.5 rounded tracking-widest text-sm uppercase hover:bg-yellow-400 transition-colors gold-glow disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full bg-gold text-white font-bold py-3.5 rounded tracking-widest text-sm uppercase hover:bg-gold-bright transition-colors gold-glow disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {status === 'submitting' ? 'Sending…' : 'Request a Quote'}
           </button>

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { TESTIMONIALS, AI_REVIEW_SUMMARY } from '@/lib/tokens'
+import SectionHeader from './SectionHeader'
 
 const STATS = {
   rating: 5.0,
@@ -16,7 +17,7 @@ function Stars({ count, size = 'sm' }: { count: number; size?: 'sm' | 'lg' }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <span
           key={i}
-          className={`${size === 'lg' ? 'text-2xl' : 'text-sm'} ${i < count ? 'text-gold' : 'text-white/10'}`}
+          className={`${size === 'lg' ? 'text-2xl' : 'text-sm'} ${i < count ? 'text-gold' : 'text-ink/15'}`}
           aria-hidden="true"
         >
           ★
@@ -30,7 +31,7 @@ function RatingBar({ label, pct }: { label: string; pct: number }) {
   return (
     <div className="flex items-center gap-3">
       <span className="text-xs text-muted w-16 shrink-0">{label}</span>
-      <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+      <div className="flex-1 h-1.5 bg-ink/10 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${pct}%` }}
@@ -77,20 +78,14 @@ export default function Testimonials() {
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS]
 
   return (
-    <section id="reviews" className="py-24 bg-[#0d0d0d] overflow-hidden">
+    <section id="reviews" className="py-24 bg-base2 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-16">
 
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <p className="label-gold mb-3">Reviews</p>
-          <h2 className="font-display text-5xl md:text-6xl font-light">What Clients Say</h2>
-        </motion.div>
+        <SectionHeader
+          eyebrow="Testimonials"
+          title={<>What Clients <em className="not-italic text-gradient">Say</em></>}
+        />
 
         {/* Aggregate rating block */}
         <motion.div
@@ -98,10 +93,10 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-16 bg-surface border border-white/5 rounded-xl p-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-16 bg-surface border border-ink/10 rounded-xl p-8"
         >
           {/* Left: big number */}
-          <div className="flex flex-col items-center justify-center gap-3 border-b md:border-b-0 md:border-r border-white/5 pb-8 md:pb-0 md:pr-8">
+          <div className="flex flex-col items-center justify-center gap-3 border-b md:border-b-0 md:border-r border-ink/10 pb-8 md:pb-0 md:pr-8">
             <span className="font-display text-8xl font-light text-gold leading-none">{STATS.rating.toFixed(1)}</span>
             <Stars count={5} size="lg" />
             <p className="text-muted text-sm">{STATS.total}+ verified reviews</p>
@@ -114,7 +109,7 @@ export default function Testimonials() {
             <RatingBar label="3 stars" pct={0} />
             <RatingBar label="2 stars" pct={0} />
             <RatingBar label="1 star"  pct={0} />
-            <div className="pt-2 border-t border-white/5 mt-1">
+            <div className="pt-2 border-t border-ink/10 mt-1">
               <p className="text-xs text-muted">
                 <span className="text-gold font-bold">{STATS.satisfaction}% satisfaction</span>
                 {' '}· Would recommend to a friend
@@ -129,7 +124,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl mx-auto mt-6 bg-[#0f0e09] border border-gold/20 rounded-xl p-6"
+          className="max-w-3xl mx-auto mt-6 bg-surface border border-gold/25 rounded-xl p-6"
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[10px] font-bold tracking-widest uppercase bg-gold/15 text-gold px-2.5 py-1 rounded-full border border-gold/30">
@@ -137,28 +132,30 @@ export default function Testimonials() {
             </span>
             <span className="text-muted text-xs">Generated from verified customer reviews</span>
           </div>
-          <p className="text-white/75 text-sm leading-relaxed">{AI_REVIEW_SUMMARY}</p>
+          <p className="text-ink/80 text-sm leading-relaxed">{AI_REVIEW_SUMMARY}</p>
         </motion.div>
 
       </div>
 
       {/* Scrolling testimonial cards */}
-      <div ref={trackRef} className="flex gap-6 w-max px-6">
-        {doubled.map((t, i) => (
-          <div
-            key={i}
-            className="w-80 flex-shrink-0 bg-[#111] border border-white/5 rounded-xl p-6 hover:border-gold/30 transition-colors"
-          >
-            <Stars count={t.stars} />
-            <p className="text-white/70 text-sm leading-relaxed mt-3 mb-5">&ldquo;{t.quote}&rdquo;</p>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold text-xs font-bold">
-                {t.name[0]}
+      <div className="mask-fade-x overflow-hidden">
+        <div ref={trackRef} className="flex gap-6 w-max px-6">
+          {doubled.map((t, i) => (
+            <div
+              key={i}
+              className="lift w-80 flex-shrink-0 bg-surface border border-ink/10 rounded-xl p-6 hover:border-gold/30"
+            >
+              <Stars count={t.stars} />
+              <p className="text-ink/75 text-sm leading-relaxed mt-3 mb-5">&ldquo;{t.quote}&rdquo;</p>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center text-gold text-xs font-bold">
+                  {t.name[0]}
+                </div>
+                <p className="text-ink/60 text-xs font-medium tracking-wide">{t.name}</p>
               </div>
-              <p className="text-white/60 text-xs font-medium tracking-wide">{t.name}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

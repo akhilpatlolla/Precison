@@ -11,6 +11,7 @@ import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Booking from '@/components/Booking'
 import Footer from '@/components/Footer'
+import Marquee from '@/components/Marquee'
 
 export default function Home() {
   return (
@@ -19,9 +20,11 @@ export default function Home() {
       <main>
         <Nav />
         <Hero />
+        <Marquee />
         <Services />
         <OurWork />
         <BeforeAfter />
+        <Marquee reverse words={['Five-Star Rated', 'Fully Insured', 'We Come To You', 'Kannapolis · NC']} />
         <Testimonials />
         <About />
         <FAQ />

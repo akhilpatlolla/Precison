@@ -1,4 +1,4 @@
-export const GOLD = '#c9a84c'
+export const GOLD = '#2e7df6'
 
 export const PACKAGES = [
   {
@@ -87,16 +87,16 @@ export const TESTIMONIALS = [
   },
 ]
 
-export const AI_REVIEW_SUMMARY = "Customers consistently praise Precision Detail for transforming their vehicles — sedans, trucks, SUVs, and coupes alike — with meticulous care and professional-grade German products. Reviewers highlight the ceramic coating and premium detail packages as standouts, noting results that rival showroom finishes and protection that lasts. The convenience of mobile service and the team's attention to detail earn loyal repeat customers across every visit."
+export const AI_REVIEW_SUMMARY = "Customers consistently praise Precision Detail for transforming their vehicles (sedans, trucks, SUVs, and coupes alike) with meticulous care and professional-grade German products. Reviewers highlight the ceramic coating and premium detail packages as standouts, noting results that rival showroom finishes and protection that lasts. The convenience of mobile service and the team's attention to detail earn loyal repeat customers across every visit."
 
 export const FAQ_ITEMS = [
   {
     q: 'How long does a full detail take?',
-    a: "A full detail typically takes 3–5 hours depending on the vehicle size and condition. We'll give you a more accurate estimate when you book.",
+    a: "A full detail typically takes 3-5 hours depending on the vehicle size and condition. We'll give you a more accurate estimate when you book.",
   },
   {
     q: 'Do you need water or electricity access?',
-    a: 'No — we are fully self-contained. We bring our own water, power, and all supplies. All we need is access to your vehicle.',
+    a: 'No, we are fully self-contained. We bring our own water, power, and all supplies. All we need is access to your vehicle.',
   },
   {
     q: 'What areas do you serve?',
@@ -108,6 +108,6 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'How far in advance should I book?',
-    a: 'We recommend booking 2–3 days in advance, though we often have same-week availability. Use the booking widget below to check current availability.',
+    a: 'We recommend booking 2-3 days in advance, though we often have same-week availability. Use the booking widget below to check current availability.',
   },
 ]

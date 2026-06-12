@@ -1,22 +1,24 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Phone, EnvelopeSimple, InstagramLogo } from '@phosphor-icons/react'
+import SectionHeader from './SectionHeader'
 
 const CONTACT = [
   {
-    icon: '📞',
+    Icon: Phone,
     label: 'Call Us',
     value: '704-960-5602',
     href: 'tel:7049605602',
   },
   {
-    icon: '✉',
+    Icon: EnvelopeSimple,
     label: 'Email',
     value: 'percisiondetail23@gmail.com',
     href: 'mailto:percisiondetail23@gmail.com',
   },
   {
-    icon: '📷',
+    Icon: InstagramLogo,
     label: 'Instagram',
     value: '@precision_detail.pro',
     href: 'https://www.instagram.com/precision_detail.pro',
@@ -25,19 +27,13 @@ const CONTACT = [
 
 export default function Booking() {
   return (
-    <section id="booking" className="py-24 px-6 bg-surface border-t border-gold/20">
+    <section id="booking" className="py-24 px-6 bg-base2 border-t border-gold/20">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <p className="label-gold mb-3">Ready to Book?</p>
-          <h2 className="font-display text-5xl md:text-6xl font-light">Book Your Detail</h2>
-          <p className="text-muted mt-3">Select your package and preferred date below</p>
-        </motion.div>
+        <SectionHeader
+          eyebrow="Reserve Your Spot"
+          title={<>Book Your <em className="not-italic text-gradient">Detail</em></>}
+          sub="Select your package and preferred date below"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Booking widget — 2/3 width */}
@@ -46,14 +42,15 @@ export default function Booking() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-2 rounded-lg overflow-hidden border border-gold/20"
+            className="lg:col-span-2 rounded-lg overflow-hidden border border-gold/20 shadow-[0_24px_48px_-24px_rgb(0_0_0/0.2)]"
           >
             {/* TODO: swap src to new booking system when migrating off fieldd.co */}
-            <div className="relative" style={{ height: 600 }}>
+            {/* The external fieldd widget renders dark text, so it always sits on white */}
+            <div className="relative bg-white" style={{ height: 600 }}>
               <iframe
                 src="https://precisiondetailllc.fieldd.co/"
                 className="w-full h-full"
-                style={{ border: 'none', background: '#0a0a0a' }}
+                style={{ border: 'none', background: '#ffffff', colorScheme: 'light' }}
                 title="Book a Detail with Precision Detail"
                 loading="lazy"
                 onError={() => {
@@ -64,14 +61,14 @@ export default function Booking() {
               <div
                 id="booking-fallback"
                 style={{ display: 'none' }}
-                className="absolute inset-0 flex-col items-center justify-center gap-4 bg-[#0a0a0a]"
+                className="absolute inset-0 flex-col items-center justify-center gap-4 bg-surface"
               >
                 <p className="text-muted text-sm">Booking widget unavailable in this browser.</p>
                 <a
                   href="https://precisiondetailllc.fieldd.co/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold text-black font-bold px-8 py-4 rounded tracking-widest uppercase hover:bg-yellow-400 transition-colors"
+                  className="bg-gold text-white font-bold px-8 py-4 rounded tracking-widest uppercase hover:bg-gold-bright transition-colors"
                 >
                   Open Booking →
                 </a>
@@ -94,12 +91,12 @@ export default function Booking() {
                 href={c.href}
                 target={c.href.startsWith('https') ? '_blank' : undefined}
                 rel={c.href.startsWith('https') ? 'noopener noreferrer' : undefined}
-                className="flex items-start gap-4 bg-[#0a0a0a] border border-white/5 rounded-lg p-4 hover:border-gold/40 transition-colors group"
+                className="lift flex items-start gap-4 bg-surface border border-ink/10 rounded-lg p-4 hover:border-gold/40"
               >
-                <span className="text-2xl" aria-hidden="true">{c.icon}</span>
+                <c.Icon className="text-gold mt-0.5" size={24} aria-hidden="true" />
                 <div>
                   <p className="text-xs text-gold tracking-wider uppercase font-bold mb-1">{c.label}</p>
-                  <p className="text-white/70 text-sm group-hover:text-white transition-colors">{c.value}</p>
+                  <p className="text-ink/70 text-sm group-hover:text-ink transition-colors">{c.value}</p>
                 </div>
               </a>
             ))}
